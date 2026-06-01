@@ -4,7 +4,7 @@ This repository contains my solutions for the **4-Week DSA & OOPS Summer Assignm
 
 ## Student Information
 
-- **Name:** Prateek Gupta
+- **Name:** Shlok Gupta
 - **Course:** B.Tech Information Technology
 - **Assignment Duration:** 1 June 2026 – 28 June 2026
 - **Platform:** LeetCode
