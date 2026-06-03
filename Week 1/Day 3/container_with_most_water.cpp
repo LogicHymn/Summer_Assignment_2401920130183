@@ -6,16 +6,24 @@ using namespace std;
 class Solution {
 public:
     int maxArea(vector<int>& height) {
-        int start=0;
-        int end=height.size()-1;
-        int ans=0;
-        while(start<end){
-            ans=max(min(height[start],height[end])*(end-start),ans);
-            if(height[start]<height[end])
+        int length, breadth, area;
+        int maxArea=0;
+        int n = height.size();
+        int start=0, end=n-1;
+
+        while(start<=end){
+            length = min(height[start], height[end]);
+            breadth = end-start;
+            area=length*breadth;
+            maxArea=max(maxArea, area);
+
+            if(height[start] < height[end]){
                 start++;
-            else
+            }
+            else{
                 end--;
+            }
         }
-        return ans;
+        return maxArea;
     }
 };
