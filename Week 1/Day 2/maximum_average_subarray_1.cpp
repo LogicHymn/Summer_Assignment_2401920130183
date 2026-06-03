@@ -6,26 +6,26 @@ using namespace std;
 class Solution {
 public:
     double findMaxAverage(vector<int>& nums, int k) {
-        int n=nums.size();
+        int start=0, end=k;
+        
+        //Store Result of starting window
         double sum=0;
-
-        for(int i=0;i<k;i++){
+        for(int i=0; i<k; i++){
             sum+=nums[i];
         }
+        double maxsum=sum;
 
-        double maximumAvg=sum/k;
-
-        for(int i=k;i<n;i++){
-            sum+=nums[i];
-            sum-=nums[i-k];
-
-            double avg=sum/k;
-            if(avg>maximumAvg){
-                maximumAvg=avg;
-            }
+        //Slide window
+        while(end<nums.size()){
+            sum-=nums[start];   //Remove last element
+            start++;            //Shrink window
+            
+            sum+=nums[end];     //Add next element
+            end++;              //Expand window
+            
+            maxsum=max(maxsum, sum);
         }
-
-        return maximumAvg;
+        return maxsum/k;
         
     }
 };
