@@ -6,8 +6,8 @@ using namespace std;
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
-        int m = matrix.size();
-        int n = matrix[0].size();
+        int m = matrix.size();    //row size
+        int n = matrix[0].size(); //column size
 
         int top=0, left=0, right=n-1, bottom=m-1;
 
